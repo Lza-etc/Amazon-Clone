@@ -1,0 +1,50 @@
+<div class="product-list" *ngIf="productList.length">
+    <ng-container *ngFor="let product of productList;let idx=index">
+        <article class="product" (click)="showProductDetails(idx)">
+            <div class="product__img-container">
+                <img class="product__img" src={{product.imgurl[0]}} alt="product-img"/>
+            </div>
+            <div class="product__data">
+                <div class="product__name">{{product.name}}</div>
+                <div class="product__rating">&#9733; {{product.rating}}</div>
+                <div class="product__price-container"><span class="product__price-symbol">&#8377;</span><span class="product__price">{{product.price}}</span></div>
+            </div>
+        </article>
+        <section class="product__details" *ngIf="idx==currentProduct">
+            <div class="product__brand"><a href="#" class="product__brand-link">{{product.brand}}</a></div>
+            <h3 class="product__title">{{product.name}}</h3>
+            <div class="product__rating">
+                <span class="rating-value">{{product.rating}}</span>
+                <span class="product__ratings">&#9733;</span>
+            </div>
+            <hr class="divider">
+            <div class="discount">
+                <span class="product__discount-value">-{{product.discount}}% </span> <span class="product__normal-price"> &#8377; {{product.price}}</span>
+            </div>
+
+            <div class="mrp">
+                <span class="mrp-label">M.R.P.: </span><span class="product__mrp-price line-through">₹{{product.mrp}}</span>
+            </div>
+
+            <p class="product__tax-info">Inclusive of all taxes</p>
+            <hr class="divider">
+            <div class="buttons">
+                <button class="product__wishlist-button" type="button">Add to WishList</button>
+                <button class="product__cart-button" type="button" >Add to Cart</button>
+            </div>
+
+            <div class="product__details-label">Product details</div>
+            <div class="product__description" *ngFor="let key of getKeys(product.extradetails)">
+                <div class="row">
+                <div class="col">
+                    <div class="left-align"><strong>{{key}}</strong></div>
+                </div>
+                <div class="col">
+                    <div class="left-align">{{ product.extradetails[key]}}</div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </ng-container>
+
+</div>>

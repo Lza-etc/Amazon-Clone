@@ -1,0 +1,29 @@
+.nav-bar2{
+    font-size: 14px;
+    height: 39px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+    color:white;
+    background-color:#232f3e;
+}
+.all{
+    padding: 10px 7px;
+    span{
+        margin-left: 6px;
+    }
+}
+.all:hover{
+    border:  solid 1px white;
+}
+.links{ display: flex;
+    flex-direction: row;
+    align-items: center;
+    a{
+        padding: 10px 7px;
+    }
+    a:hover{
+        border:  solid 1px white;
+    }
+}
