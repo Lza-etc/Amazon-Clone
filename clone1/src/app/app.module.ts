@@ -6,12 +6,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NavBar2Component } from './nav-bar2/nav-bar2.component';
 import { NavBar3Component } from './nav-bar3/nav-bar3.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { NumberonlyDirective } from './numberonly.directive';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NumberonlyDirective
+    
   ],
   imports: [
     BrowserModule,
