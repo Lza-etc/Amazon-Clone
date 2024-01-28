@@ -7,8 +7,8 @@
             <div class="location__country">Update Location</div>
         </div>
     </div>
-    <form class="searchbar" (ngSubmit)="onSubmit(form)" #form="ngForm" action="www.example.com">
-        <select class="dropdown__toggle" id="category" name="category" aria-label="category" required [(ngModel)]="selectedCategory" #categoryInput="ngModel">
+    <form class="searchbar" [formGroup]="form" (ngSubmit)="submit()" action="#">
+        <select class="dropdown__toggle" id="category" formControlName="category" aria-label="category" required >
             <option value="" disabled selected>Select a category</option>
             <option value="baby">Baby</option>
             <option value="clothing">Clothing</option>
@@ -19,16 +19,12 @@
         </select>
         
     
-        <input class="searchbar__input" id="search" name="search" type="text" placeholder="Search Amazon" required autofocus [(ngModel)]="searchQuery" #searchInput="ngModel" />
+        <input class="searchbar__input" formControlName="searchText" id="search"  type="text" placeholder="Search Amazon" required appNumberonly />
     
-        <button class="searchbar__icon" type="submit" aria-label="search-button">
+        <button class="searchbar__icon" type="submit" aria-label="search-button" >
             <i class="fas fa-search fa-lg"></i>
         </button>
     </form>
-<!--     
-    <div *ngIf="form.controls['category'].invalid && form.controls['category'].touched">
-        Please select a category.
-    </div> -->
     
     <div class="nav-right">
         <div class="language">

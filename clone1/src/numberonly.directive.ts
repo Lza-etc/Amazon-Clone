@@ -2,6 +2,7 @@ import { Directive, HostListener, Injector } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 @Directive({
+  standalone: true,
   selector: '[appNumberonly]'
 })
 export class NumberonlyDirective {
