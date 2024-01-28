@@ -1,6 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.cdnfonts.com/css/amazon-ember');
-
+@font-face {
+    font-family: 'Amazon Ember';
+    src: url('./assets//fonts/Ember/AmazonEmber_Rg.ttf') format('truetype');
+}
 *{
     margin: 0px;
     font-family: 'Amazon Ember', sans-serif;
