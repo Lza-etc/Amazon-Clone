@@ -1,4 +1,4 @@
-import { Directive, HostListener, Injector } from '@angular/core';
+import { Directive, ElementRef, HostListener, Injector } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 @Directive({
@@ -7,12 +7,12 @@ import { NgControl } from '@angular/forms';
 })
 export class NumberonlyDirective {
 
-  constructor(private injector: Injector) { }
+  constructor(private ele: ElementRef<HTMLInputElement>) {}
 
   @HostListener('input', ['$event.target.value']) onInput(value: string) {
-    const ngControl = this.injector.get(NgControl);
-    if (ngControl) {
-      ngControl.control?.setValue(value.replace(/[^0-9]/g, ''));
+    const input = this.ele.nativeElement as HTMLInputElement;
+    if (input) {
+      input.value = value.replace(/[^\d.-]/g, '');
     }
   }
 

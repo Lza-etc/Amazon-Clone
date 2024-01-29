@@ -79,9 +79,9 @@
         width: 100%;
         border: 3px solid #ccc;
     }
-    // input.ng-invalid:focus {
-    //     outline-color: rgb(176, 99, 99);
-    //   }
+    input.ng-invalid:focus {
+        outline-color: red;
+      }
     &__icon{
         background-color: #febd69;
         width: 41px;
@@ -159,9 +159,9 @@
         width: 40px;
     }
     &__number{
-        position: absolute;
+        position: fixed;
         color: #febd69;
-        top:12px;
+        top:7px;
         right: 74px;
     }
 }
